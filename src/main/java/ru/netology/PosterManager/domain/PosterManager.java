@@ -5,15 +5,15 @@ public class PosterManager {
     FilmData[] filmsList = new FilmData[0];
     int lastFilmsLimit = 10;
 
-    public PosterManager () {
+    public PosterManager() {
 
     }
 
-    public PosterManager (int lastFilmsLimit) {
-    this.lastFilmsLimit = lastFilmsLimit;
+    public PosterManager(int lastFilmsLimit) {
+        this.lastFilmsLimit = lastFilmsLimit;
     }
 
-    public void addNewFilm (FilmData newFilm) {
+    public void addNewFilm(FilmData newFilm) {
         FilmData[] tmp = new FilmData[filmsList.length + 1];
         for (int i = 0; i < filmsList.length; i++) {
             tmp[i] = filmsList[i];
@@ -22,11 +22,11 @@ public class PosterManager {
         filmsList = tmp;
     }
 
-    public FilmData[] findAll () {
-    return filmsList;
+    public FilmData[] findAll() {
+        return filmsList;
     }
 
-    public FilmData[] findLast () {
+    public FilmData[] findLast() {
         int resultLength;
         if (lastFilmsLimit > filmsList.length) {
             resultLength = filmsList.length;
