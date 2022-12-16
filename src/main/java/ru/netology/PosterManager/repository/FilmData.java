@@ -1,4 +1,4 @@
-package ru.netology.PosterManager.domain;
+package ru.netology.PosterManager.repository;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
