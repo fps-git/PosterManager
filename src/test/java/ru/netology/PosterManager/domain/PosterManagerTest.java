@@ -39,7 +39,7 @@ class PosterManagerTest {
 
     @Test
     public void shouldAddNewFilm() {
-        FilmData film8 = new FilmData(8, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg",true);
+        FilmData film8 = new FilmData(8, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg", true);
         manager.addNewFilm(film8);
 
         FilmData[] expected = {film1, film2, film3, film4, film5, film6, film7, film8};
@@ -60,10 +60,9 @@ class PosterManagerTest {
     @Test
     public void shouldReturnNullIfBadId() {
 
-        FilmData expected = null;
         FilmData actual = manager.findById(0);
 
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(null, actual);
     }
 
     @Test
@@ -99,9 +98,8 @@ class PosterManagerTest {
     @Test
     public void shouldRemoveAllSecondOption() {
         manager.removeAll2();
-        FilmData[] emptyArray = new FilmData[repo.findAll().length];
 
-        FilmData[] expected = emptyArray;
+        FilmData[] expected = new FilmData[repo.findAll().length];
         FilmData[] actual = manager.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
@@ -109,11 +107,11 @@ class PosterManagerTest {
 
     @Test
     public void shouldSetDefault10IfBadLastFilmsLimit() {
-        FilmData film8 = new FilmData(8, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg",true);
-        FilmData film9 = new FilmData(9, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg",true);
-        FilmData film10 = new FilmData(10, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg",true);
-        FilmData film11 = new FilmData(11, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg",true);
-        FilmData film12 = new FilmData(12, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg",true);
+        FilmData film8 = new FilmData(8, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg", true);
+        FilmData film9 = new FilmData(9, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg", true);
+        FilmData film10 = new FilmData(10, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg", true);
+        FilmData film11 = new FilmData(11, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg", true);
+        FilmData film12 = new FilmData(12, "Елки-9", "комедия", "https://img04.rl0.ru/afisha/e920x1380q65i/s5.afisha.ru/mediastorage/c5/1e/907d96ee4dfc45ed814e3f661ec5.jpeg", true);
 
         manager.addNewFilm(film8);
         manager.addNewFilm(film9);
